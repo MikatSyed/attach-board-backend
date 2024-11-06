@@ -13,10 +13,10 @@ const storage = multer.diskStorage({
     cb(null, uploadDir); // Use the created directory
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`); // Generate a unique filename
+    cb(null, `${Date.now()}-${file.originalname}`); 
   },
 });
 
 export const attachmentUpload = multer({ 
   storage,
-}).array('attachments'); // Ensure this matches the name in your frontend file input
+}).array('attachments'); 

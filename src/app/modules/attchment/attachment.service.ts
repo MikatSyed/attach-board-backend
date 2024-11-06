@@ -39,9 +39,7 @@ const postAttachment = async (taskId: string, files: Express.Multer.File[]): Pro
 const getAttachmentByTaskId = async (taskId: string): Promise<AttachmentListResponse> => {
     const attachments = await Attachment.find({ taskId });
 
-    if (attachments.length === 0) {
-      throw new ApiError(httpStatus.NOT_FOUND, `No files found for taskId: ${taskId}`);
-    }
+   
 
     // Map the attachments to match the AttachmentResponse type
     const fileList: AttachmentResponse[] = attachments.map((attachment) => ({

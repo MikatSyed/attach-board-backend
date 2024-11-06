@@ -24,7 +24,7 @@ const postAttachment = catchAsync(async (req: Request, res: Response) => {
 const getAttachmentByTaskId = catchAsync(async (req: Request, res: Response) => {
 
   const { taskId } = req.params;
-
+   console.log(taskId)
   const uploadedFiles:AttachmentListResponse = await AttachmentService.getAttachmentByTaskId(taskId);
 
   
