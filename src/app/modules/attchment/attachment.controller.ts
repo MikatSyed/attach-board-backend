@@ -9,7 +9,7 @@ import { AttachmentListResponse } from './attchment.interface';
 const postAttachment = catchAsync(async (req: Request, res: Response) => {
   const taskId: string = req.body.taskId;  
 
-
+  console.log(req.files,'12')
   const uploadedFiles = await AttachmentService.postAttachment(taskId, req.files as Express.Multer.File[]);
 
   
